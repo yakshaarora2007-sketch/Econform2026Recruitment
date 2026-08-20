@@ -2317,3 +2317,103 @@
     max-height: 54px !important;
   }
 }
+
+
+/* =========================================================
+   FINAL MOBILE VISIBILITY FIX
+   Hide the board rails/property strips on phone layouts.
+
+   IMPORTANT:
+   - Desktop/laptop: unchanged, right rail remains visible.
+   - Phone/tablet: only the form + step navigation remain.
+   - !important is intentional because this file contains
+     several later desktop overrides.
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+  /* Hide the top property strip */
+  .board-top-strip {
+    display: none !important;
+  }
+
+  /* Hide the entire right-side property rail */
+  .right-rail {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* The board body should contain only the step rail + form */
+  .board-body {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Keep the form itself fully visible */
+  .form-panel {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .form-panel-inner {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Do not let the desktop board translation affect mobile */
+  .board-layout {
+    transform: none !important;
+  }
+}
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media screen and (max-width: 760px) {
+
+  .page-shell {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .board-layout {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .game-board {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Absolutely prevent the desktop rails from appearing
+     below the submit button on phones. */
+  .right-rail,
+  .board-top-strip {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .board-body {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+  }
+
+  .form-panel {
+    width: 100% !important;
+  }
+
+  .form-panel-inner {
+    width: 100% !important;
+    padding: 20px 16px !important;
+  }
+}

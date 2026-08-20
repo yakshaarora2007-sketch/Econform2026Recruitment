@@ -263,6 +263,30 @@ export default function RegistrationForm() {
     contribution: contributionRef
   }
 
+  // Every form field belongs to one of the four left-side cards.
+  // Focusing either field in a pair selects the corresponding card.
+  const FIELD_TO_STEP = {
+    name: 'player',
+    phone_number: 'player',
+
+    roll_no: 'identity',
+    email: 'identity',
+
+    stock_market: 'market',
+    finance_geopolitics: 'market',
+
+    contribution: 'deal',
+    expectations: 'deal'
+  }
+
+  const handleFieldFocus = (fieldName) => {
+    const stepId = FIELD_TO_STEP[fieldName]
+
+    if (stepId) {
+      setActiveStep(stepId)
+    }
+  }
+
   const handleStepClick = (stepId) => {
     setActiveStep(stepId)
 
@@ -571,6 +595,7 @@ export default function RegistrationForm() {
                           placeholder="Enter your full name"
                           value={formData.name}
                           onChange={handleInputChange}
+                          onFocus={() => handleFieldFocus('name')}
                           onBlur={handleFieldBlur}
                           aria-invalid={Boolean(errors.name)}
                         />
@@ -590,6 +615,7 @@ export default function RegistrationForm() {
                           inputMode="numeric"
                           value={formData.phone_number}
                           onChange={handleInputChange}
+                          onFocus={() => handleFieldFocus('phone_number')}
                           onBlur={handleFieldBlur}
                           aria-invalid={Boolean(errors.phone_number)}
                         />
@@ -611,6 +637,7 @@ export default function RegistrationForm() {
                           maxLength="10"
                           value={formData.roll_no}
                           onChange={handleInputChange}
+                          onFocus={() => handleFieldFocus('roll_no')}
                           onBlur={handleFieldBlur}
                           aria-invalid={Boolean(errors.roll_no)}
                         />
@@ -629,6 +656,7 @@ export default function RegistrationForm() {
                           placeholder="Enter your email address"
                           value={formData.email}
                           onChange={handleInputChange}
+                          onFocus={() => handleFieldFocus('email')}
                           onBlur={handleFieldBlur}
                           aria-invalid={Boolean(errors.email)}
                         />
@@ -646,6 +674,7 @@ export default function RegistrationForm() {
                           name="stock_market"
                           value={selectValue('stock_market')}
                           onChange={handleSelectChange}
+                          onFocus={() => handleFieldFocus('stock_market')}
                           onBlur={handleFieldBlur}
                           aria-invalid={Boolean(errors.stock_market)}
                         >
@@ -667,6 +696,7 @@ export default function RegistrationForm() {
                           name="finance_geopolitics"
                           value={selectValue('finance_geopolitics')}
                           onChange={handleSelectChange}
+                          onFocus={() => handleFieldFocus('finance_geopolitics')}
                           onBlur={handleFieldBlur}
                           aria-invalid={Boolean(errors.finance_geopolitics)}
                         >
@@ -690,6 +720,7 @@ export default function RegistrationForm() {
                           placeholder="Share your ideas..."
                           value={formData.contribution}
                           onChange={handleInputChange}
+                          onFocus={() => handleFieldFocus('contribution')}
                           onBlur={handleFieldBlur}
                           aria-invalid={Boolean(errors.contribution)}
                           rows="4"
@@ -708,6 +739,7 @@ export default function RegistrationForm() {
                           placeholder="Share your expectations..."
                           value={formData.expectations}
                           onChange={handleInputChange}
+                          onFocus={() => handleFieldFocus('expectations')}
                           onBlur={handleFieldBlur}
                           aria-invalid={Boolean(errors.expectations)}
                           rows="4"
