@@ -484,75 +484,12 @@
   box-shadow: 0 0 0 3px rgba(10, 10, 10, 0.02);
 }
 
-.field-image-icon,
-.person-icon,
-.globe-icon {
-  width: 22px;
-  height: 22px;
-  flex: 0 0 auto;
-}
-
 .field-image-icon {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
   object-fit: contain;
-}
-
-/* =========================================================
-   PERSON ICON
-   ========================================================= */
-
-.person-icon {
-  position: relative;
-}
-
-.person-icon::before {
-  content: '';
-  position: absolute;
-  left: 7px;
-  top: 1px;
-  width: 8px;
-  height: 8px;
-  border: 2px solid #c80e13;
-  border-radius: 50%;
-}
-
-.person-icon::after {
-  content: '';
-  position: absolute;
-  left: 3px;
-  bottom: 1px;
-  width: 16px;
-  height: 10px;
-  border: 2px solid #c80e13;
-  border-bottom: 0;
-  border-radius: 11px 11px 0 0;
-}
-
-/* =========================================================
-   GLOBE ICON
-   ========================================================= */
-
-.globe-icon {
-  position: relative;
-  border: 2px solid #087033;
-  border-radius: 50%;
-}
-
-.globe-icon::before {
-  content: '';
-  position: absolute;
-  inset: 3px 8px;
-  border-left: 1.5px solid #087033;
-  border-right: 1.5px solid #087033;
-  border-radius: 50%;
-}
-
-.globe-icon::after {
-  content: '';
-  position: absolute;
-  left: 2px;
-  right: 2px;
-  top: 8px;
-  border-top: 1.5px solid #087033;
+  display: block;
 }
 
 .textarea-shell .field-image-icon {
