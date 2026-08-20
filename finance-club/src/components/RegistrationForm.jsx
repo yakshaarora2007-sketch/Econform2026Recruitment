@@ -57,7 +57,12 @@ const TOP_TILES = [
 const RIGHT_TILES = [
   { title: 'SKYWALK', accent: '#2f9de0' },
   { title: 'WATERBODY CAFE', accent: '#2f9de0' },
-  { title: 'LIBRARY', accent: '#2f9de0' }
+  { title: 'LIBRARY', accent: '#2f9de0' },
+  { title: 'COMMUNITY CHEST', image: communityChestImage, special: true, accent: 'transparent' },
+  { title: 'POLICY PLACE', accent: '#2f9de0' },
+  { title: 'BUDGET BOULEVARD', accent: '#2f9de0' },
+  { title: 'FISCAL STREET', accent: '#2f9de0' },
+  { title: 'GO' }
 ]
 
 const FIELD_ICONS = {

@@ -27,7 +27,7 @@
   position: relative;
   padding: 0;
   background: transparent;
-  overflow: visible;
+  overflow: hidden;
   min-height: 720px;
   z-index: 3;
 }
@@ -736,9 +736,10 @@
   }
 
   .monopoly-bottom-section {
-    left: -20px;
-    bottom: -5px;
-    width: 405px;
+    left: 4px;
+    bottom: 4px;
+    width: 315px;
+    max-width: 315px;
   }
 
   /* Keep property cards larger at this breakpoint */
@@ -891,8 +892,8 @@
   position: relative;
   min-height: 720px;
   height: 100%;
-  overflow: visible;
-  z-index: 5;
+  overflow: hidden;
+  z-index: 3;
 }
 
 .econ-left-branding {
@@ -910,15 +911,15 @@
 
 .monopoly-bottom-section {
   position: absolute;
-  left: -22px;
+  left: 6px;
   right: auto;
-  bottom: -6px;
-  width: 445px;
-  max-width: none;
+  bottom: 4px;
+  width: 340px;
+  max-width: 340px;
   height: auto;
   display: block;
   object-fit: contain;
-  z-index: 3;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -950,9 +951,10 @@
   }
 
   .monopoly-bottom-section {
-    left: -20px;
-    bottom: -5px;
-    width: 405px;
+    left: 4px;
+    bottom: 4px;
+    width: 315px;
+    max-width: 315px;
   }
 }
 
@@ -1060,5 +1062,1258 @@
 
   .board-copy {
     font-size: 11px;
+  }
+}
+
+/* =========================================================
+   FINAL LEFT + RIGHT RAIL REFINEMENTS
+   ========================================================= */
+
+/* Keep the left artwork fully inside its own column. */
+.promo-panel {
+  overflow: hidden;
+  z-index: 3;
+}
+
+.monopoly-bottom-section {
+  left: 6px;
+  bottom: 4px;
+  width: 340px;
+  max-width: 340px;
+  z-index: 2;
+}
+
+/* Keep the board above the left artwork. */
+.game-board {
+  position: relative;
+  z-index: 4;
+}
+
+/* Match the reference board's fuller right-side rail. */
+.right-rail {
+  display: grid;
+  grid-template-rows: repeat(7, minmax(0, 1fr)) minmax(0, 1.35fr);
+  min-height: 100%;
+  overflow: hidden;
+  border-left: 2.5px solid #111;
+  background: #fbf6ea;
+}
+
+.right-rail .board-tile {
+  min-height: 0;
+  flex: none;
+  width: 100%;
+}
+
+.right-rail .board-tile.vertical {
+  padding: 6px 5px 6px 14px;
+  border-bottom: 2px solid #111;
+  border-right: 0;
+}
+
+.right-rail .board-tile.vertical:last-child {
+  border-bottom: 0;
+}
+
+.right-rail .board-tile.vertical .board-copy {
+  font-size: 10px;
+  line-height: 1.05;
+  text-align: center;
+}
+
+.right-rail .board-tile.vertical .board-special-image {
+  max-width: 72px;
+  max-height: 72px;
+}
+
+.right-rail .go-tile {
+  justify-content: center;
+  gap: 3px;
+  padding: 8px 5px;
+}
+
+.right-rail .go-word {
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 0.9;
+  color: #111;
+}
+
+.right-rail .go-sub-top {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 8px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  color: #111;
+}
+
+.right-rail .go-arrow-svg {
+  width: 54px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 1380px) {
+  .monopoly-bottom-section {
+    left: 4px;
+    bottom: 4px;
+    width: 315px;
+    max-width: 315px;
+  }
+
+  .right-rail .board-tile.vertical .board-copy {
+    font-size: 9px;
+  }
+
+  .right-rail .go-word {
+    font-size: 28px;
+  }
+}
+
+/* =========================================================
+   FINAL DESKTOP / 80% ZOOM FIXES
+   ========================================================= */
+
+@media (min-width: 1181px) {
+  .board-layout {
+    grid-template-columns: 360px minmax(0, 1fr);
+    width: min(1530px, calc(100vw - 32px));
+    max-width: 1530px;
+    margin: 18px auto;
+  }
+
+  .promo-panel {
+    min-height: 720px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+  }
+
+  .econ-left-branding {
+    width: 285px;
+    max-width: 285px;
+    top: 4px;
+  }
+
+  .monopoly-bottom-section {
+    left: 0;
+    bottom: 0;
+    width: 350px;
+    max-width: 350px;
+    height: auto;
+    object-fit: contain;
+    object-position: bottom left;
+    z-index: 2;
+  }
+
+  .game-board {
+    position: relative;
+    z-index: 4;
+  }
+
+  /* Use the available vertical space instead of clustering the form at the top. */
+  .form-panel-inner {
+    padding: 28px 52px 24px;
+    height: 100%;
+  }
+
+  .registration-form {
+    gap: 22px;
+  }
+
+  .field-grid {
+    gap: 20px 32px;
+  }
+
+  .field-group {
+    gap: 7px;
+  }
+
+  .field-shell {
+    min-height: 50px;
+    padding: 0 14px;
+  }
+
+  .textarea-shell {
+    min-height: 125px;
+    padding-top: 12px;
+    padding-bottom: 10px;
+  }
+
+  .field-shell textarea {
+    min-height: 90px;
+  }
+
+  .form-subtitle {
+    margin-bottom: 22px;
+  }
+
+  .form-actions {
+    padding-top: 4px;
+  }
+
+  /* Right rail spacing closer to the reference. */
+  .right-rail {
+    display: grid;
+    grid-template-rows: repeat(7, minmax(0, 1fr)) minmax(0, 1.45fr);
+    min-height: 100%;
+    overflow: hidden;
+    border-left: 2.5px solid #111;
+    background: #fbf6ea;
+  }
+
+  .right-rail .board-tile.vertical {
+    padding: 8px 5px 8px 12px;
+    min-height: 0;
+    flex: none;
+    width: 100%;
+    border-bottom: 2px solid #111;
+    border-right: 0;
+  }
+
+  .right-rail .board-tile.vertical:last-child {
+    border-bottom: 0;
+  }
+
+  .right-rail .board-tile.vertical .board-copy {
+    font-size: 10px;
+    line-height: 1.15;
+    text-align: center;
+  }
+
+  .right-rail .board-tile.vertical .board-special-image {
+    max-width: 62px;
+    max-height: 62px;
+  }
+
+  .right-rail .go-tile {
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 5px;
+  }
+
+  .right-rail .go-word {
+    font-size: 38px;
+    line-height: 0.85;
+  }
+
+  .right-rail .go-sub-top {
+    font-size: 8px;
+    line-height: 1.05;
+  }
+
+  .right-rail .go-arrow-svg {
+    width: 58px;
+    height: 22px;
+  }
+}
+
+
+/* =========================================================
+   FINAL LEFT PROMO ASSET TUNING
+   ========================================================= */
+
+/* Stretch the top ECON branding vertically without changing
+   its horizontal footprint. */
+@media (min-width: 1181px) {
+  .econ-left-branding {
+    width: 285px;
+    max-width: 285px;
+    height: 400px;
+    object-fit: fill;
+    object-position: center top;
+    top: 4px;
+  }
+
+  /* Stretch the lower Monopoly composition upward and move it
+     slightly to the right. Keep it clipped to the promo panel. */
+  .monopoly-bottom-section {
+    left: 14px;
+    bottom: 0;
+    width: 375px;
+    max-width: 375px;
+    height: 390px;
+    object-fit: fill;
+    object-position: bottom left;
+  }
+}
+
+/* =========================================================
+   FINAL RIGHT RAIL
+   REFERENCE BOARD COLORS + SPACING
+   ========================================================= */
+
+@media (min-width: 1181px) {
+
+  .right-rail {
+    display: grid !important;
+
+    grid-template-rows:
+      repeat(7, minmax(0, 1fr))
+      minmax(0, 1.45fr) !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+
+    overflow: hidden !important;
+
+    background: #fbf6ea !important;
+    border-left: 2.5px solid #111 !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     RIGHT RAIL CARDS
+     --------------------------------------------------------- */
+
+  .right-rail > .board-tile {
+    position: relative !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 7px 5px 7px 17px !important;
+
+    background: #fbf6ea !important;
+    color: #070707 !important;
+
+    border: 0 !important;
+    border-bottom: 2px solid #111 !important;
+
+    overflow: hidden !important;
+  }
+
+  .right-rail > .board-tile:last-child {
+    border-bottom: 0 !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     PROPERTY COLOR STRIP
+     --------------------------------------------------------- */
+
+  .right-rail > .board-tile .board-accent.vertical {
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+
+    width: 14px !important;
+    height: auto !important;
+
+    border: 0 !important;
+    border-right: 2px solid #111 !important;
+
+    z-index: 20 !important;
+  }
+
+
+  /* =========================================================
+     LIGHT BLUE
+     Skywalk / Waterbody Cafe / Library
+
+     Matched to the supplied board reference.
+     ========================================================= */
+
+  .right-rail > .board-tile:nth-child(1) .board-accent.vertical,
+  .right-rail > .board-tile:nth-child(2) .board-accent.vertical,
+  .right-rail > .board-tile:nth-child(3) .board-accent.vertical {
+    background: #2493CB !important;
+  }
+
+
+  /* =========================================================
+     CHANCE / COMMUNITY CHEST
+     No property-color strip
+     ========================================================= */
+
+  .right-rail > .board-tile:nth-child(4) .board-accent.vertical {
+    display: none !important;
+    background: transparent !important;
+  }
+
+
+  /* =========================================================
+     DARK BLUE
+     Nirvana Park / Parking / Athletics Track
+
+     Matched to the supplied board reference.
+     ========================================================= */
+
+  .right-rail > .board-tile:nth-child(5) .board-accent.vertical,
+  .right-rail > .board-tile:nth-child(6) .board-accent.vertical,
+  .right-rail > .board-tile:nth-child(7) .board-accent.vertical {
+    display: block !important;
+    background: #005BAF !important;
+  }
+
+
+  /* =========================================================
+     GO
+     Larger than the other spaces
+     ========================================================= */
+
+  .right-rail > .board-tile:nth-child(8) {
+    justify-content: center !important;
+    align-items: center !important;
+
+    gap: 5px !important;
+
+    padding: 10px 5px !important;
+
+    background: #fbf6ea !important;
+
+    border-bottom: 0 !important;
+  }
+
+  .right-rail > .board-tile:nth-child(8) .board-accent.vertical {
+    display: none !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     PROPERTY TEXT
+     --------------------------------------------------------- */
+
+  .right-rail > .board-tile .board-copy {
+    position: relative !important;
+    z-index: 30 !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 2px !important;
+
+    color: #070707 !important;
+
+    font-size: 9px !important;
+    font-weight: 900 !important;
+    line-height: 1.12 !important;
+
+    text-align: center !important;
+    text-transform: uppercase !important;
+
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+  }
+
+  .right-rail > .board-tile .board-copy span {
+    display: block !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     GO TYPOGRAPHY
+     --------------------------------------------------------- */
+
+  .right-rail > .board-tile:nth-child(8) .go-word {
+    margin: 0 !important;
+
+    font-size: 40px !important;
+    font-weight: 900 !important;
+    line-height: 0.82 !important;
+
+    color: #111 !important;
+    text-align: center !important;
+  }
+
+  .right-rail > .board-tile:nth-child(8) .go-sub-top {
+    margin: 0 !important;
+
+    font-family:
+      Impact,
+      Haettenschweiler,
+      'Arial Narrow Bold',
+      sans-serif !important;
+
+    font-size: 7px !important;
+    font-weight: 900 !important;
+    line-height: 1.05 !important;
+
+    color: #111 !important;
+
+    text-align: center !important;
+    text-transform: uppercase !important;
+  }
+
+  .right-rail > .board-tile:nth-child(8) .go-arrow-svg {
+    width: 56px !important;
+    height: 21px !important;
+  }
+}
+
+
+/* =========================================================
+   80% DESKTOP
+   ========================================================= */
+
+@media (min-width: 1181px) and (max-width: 1380px) {
+
+  .right-rail {
+    grid-template-rows:
+      repeat(7, minmax(0, 1fr))
+      minmax(0, 1.45fr) !important;
+  }
+
+  .right-rail > .board-tile {
+    padding: 6px 4px 6px 15px !important;
+  }
+
+  .right-rail > .board-tile .board-accent.vertical {
+    width: 13px !important;
+  }
+
+  .right-rail > .board-tile .board-copy {
+    font-size: 8px !important;
+    line-height: 1.1 !important;
+  }
+
+  .right-rail > .board-tile:nth-child(8) .go-word {
+    font-size: 35px !important;
+  }
+
+  .right-rail > .board-tile:nth-child(8) .go-sub-top {
+    font-size: 6.5px !important;
+  }
+
+  .right-rail > .board-tile:nth-child(8) .go-arrow-svg {
+    width: 50px !important;
+    height: 19px !important;
+  }
+}
+
+
+/* =========================================================
+   GO SQUARE IMAGE
+   Uses: assets_images/go_square.png
+   ========================================================= */
+
+@media (min-width: 1181px) {
+
+  /* Make the final GO tile an image-based square */
+  .right-rail > .board-tile:nth-child(8) {
+    position: relative !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: #fbf6ea !important;
+  }
+
+  /* Hide the old text/arrow implementation */
+  .right-rail > .board-tile:nth-child(8) .go-word,
+  .right-rail > .board-tile:nth-child(8) .go-sub-top,
+  .right-rail > .board-tile:nth-child(8) .go-arrow-svg {
+    display: none !important;
+  }
+
+  /* GO asset */
+  .right-rail > .board-tile:nth-child(8)::after {
+    content: "";
+    display: block;
+    width: 82%;
+    height: 92%;
+    background: url("../assets_images/go_square.png") center center / contain no-repeat;
+    flex: 0 0 auto;
+  }
+
+}
+
+/* 80% desktop */
+@media (min-width: 1181px) and (max-width: 1380px) {
+
+  .right-rail > .board-tile:nth-child(8)::after {
+    width: 82%;
+    height: 92%;
+  }
+
+}
+
+
+/* =========================================================
+   RECRUITMENT BOARD TEXT FIXES
+   Utility squares + dark-blue property names
+   ========================================================= */
+
+@media (min-width: 1181px) {
+
+  /* ---------------------------------------------------------
+     TOP UTILITY / SPECIAL SQUARES
+     Match the reference:
+     FREE PARKING / COMMUNITY CHEST / CHANCE / GO TO JAIL
+     --------------------------------------------------------- */
+
+  .board-top-strip > .board-tile:nth-child(1),
+  .board-top-strip > .board-tile:nth-child(5),
+  .board-top-strip > .board-tile:nth-child(9),
+  .board-top-strip > .board-tile:nth-child(13) {
+    justify-content: space-between !important;
+    padding: 10px 6px 8px !important;
+  }
+
+  /* Remove the incorrect/missing existing text without removing icons */
+  .board-top-strip > .board-tile:nth-child(1) .board-copy,
+  .board-top-strip > .board-tile:nth-child(5) .board-copy,
+  .board-top-strip > .board-tile:nth-child(9) .board-copy,
+  .board-top-strip > .board-tile:nth-child(13) .board-copy {
+    display: none !important;
+  }
+
+  /* Utility labels */
+  .board-top-strip > .board-tile:nth-child(1)::before {
+    content: "FREE";
+    display: block;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #070707;
+    z-index: 5;
+  }
+
+  .board-top-strip > .board-tile:nth-child(1)::after {
+    content: "PARKING";
+    display: block;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #070707;
+    z-index: 5;
+  }
+
+  .board-top-strip > .board-tile:nth-child(5)::before {
+    content: "COMMUNITY\\A CHEST";
+    white-space: pre;
+    display: block;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+    text-align: center;
+    color: #070707;
+    z-index: 5;
+  }
+
+  .board-top-strip > .board-tile:nth-child(9)::before {
+    content: "CHANCE";
+    display: block;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #070707;
+    z-index: 5;
+  }
+
+  .board-top-strip > .board-tile:nth-child(13)::before {
+    content: "GO TO\\A JAIL";
+    white-space: pre;
+    display: block;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+    text-align: center;
+    color: #070707;
+    z-index: 5;
+  }
+
+  /* Keep special icons at a consistent reference-board size */
+  .board-top-strip > .board-tile:nth-child(1) .board-special-image,
+  .board-top-strip > .board-tile:nth-child(5) .board-special-image,
+  .board-top-strip > .board-tile:nth-child(9) .board-special-image,
+  .board-top-strip > .board-tile:nth-child(13) .board-special-image {
+    max-width: 62px !important;
+    max-height: 62px !important;
+    object-fit: contain !important;
+  }
+
+  /* ---------------------------------------------------------
+     DARK BLUE RIGHT-RAIL PROPERTIES
+     Reference names:
+     POLICY PLACE
+     BUDGET BOULEVARD
+     FISCAL STREET
+     --------------------------------------------------------- */
+
+  .right-rail > .board-tile:nth-child(5) .board-copy,
+  .right-rail > .board-tile:nth-child(6) .board-copy,
+  .right-rail > .board-tile:nth-child(7) .board-copy {
+    font-size: 0 !important;
+    line-height: 1 !important;
+  }
+
+  .right-rail > .board-tile:nth-child(5) .board-copy::after,
+  .right-rail > .board-tile:nth-child(6) .board-copy::after,
+  .right-rail > .board-tile:nth-child(7) .board-copy::after {
+    display: block;
+    width: 100%;
+    padding: 0 2px;
+    color: #070707;
+    font-size: 9px;
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: pre-line;
+  }
+
+  .right-rail > .board-tile:nth-child(5) .board-copy::after {
+    content: "POLICY\\A PLACE";
+  }
+
+  .right-rail > .board-tile:nth-child(6) .board-copy::after {
+    content: "BUDGET\\A BOULEVARD";
+  }
+
+  .right-rail > .board-tile:nth-child(7) .board-copy::after {
+    content: "FISCAL\\A STREET";
+  }
+
+}
+
+/* 80% desktop sizing */
+@media (min-width: 1181px) and (max-width: 1380px) {
+
+  .board-top-strip > .board-tile:nth-child(1)::before,
+  .board-top-strip > .board-tile:nth-child(1)::after,
+  .board-top-strip > .board-tile:nth-child(9)::before {
+    font-size: 9px;
+  }
+
+  .board-top-strip > .board-tile:nth-child(5)::before,
+  .board-top-strip > .board-tile:nth-child(13)::before {
+    font-size: 8px;
+  }
+
+  .right-rail > .board-tile:nth-child(5) .board-copy::after,
+  .right-rail > .board-tile:nth-child(6) .board-copy::after,
+  .right-rail > .board-tile:nth-child(7) .board-copy::after {
+    font-size: 8px;
+  }
+
+  .board-top-strip > .board-tile:nth-child(1) .board-special-image,
+  .board-top-strip > .board-tile:nth-child(5) .board-special-image,
+  .board-top-strip > .board-tile:nth-child(9) .board-special-image,
+  .board-top-strip > .board-tile:nth-child(13) .board-special-image {
+    max-width: 52px !important;
+    max-height: 52px !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL RECRUITMENT BOARD FIXES
+   1. Move form content left
+   2. Correct top property names
+   3. Correct dark-blue property names
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   FORM POSITION
+   Move the complete form content left without changing
+   the board frame, step rail, or right rail.
+   --------------------------------------------------------- */
+
+@media (min-width: 1181px) {
+
+  .form-panel-inner {
+    padding-left: 32px !important;
+    padding-right: 38px !important;
+  }
+
+  /* Keep the two-column form balanced after shifting left */
+  .field-grid {
+    column-gap: 28px !important;
+  }
+
+  /* -------------------------------------------------------
+     TOP PROPERTY NAMES
+     Exact names requested:
+     COS / OAT / FETE AREA
+     TSLAS / VENTURE LAB / FLAVORS CAFE
+     ------------------------------------------------------- */
+
+  .board-top-strip > .board-tile:nth-child(2) .board-copy,
+  .board-top-strip > .board-tile:nth-child(3) .board-copy,
+  .board-top-strip > .board-tile:nth-child(4) .board-copy,
+  .board-top-strip > .board-tile:nth-child(6) .board-copy,
+  .board-top-strip > .board-tile:nth-child(7) .board-copy,
+  .board-top-strip > .board-tile:nth-child(8) .board-copy,
+  .board-top-strip > .board-tile:nth-child(10) .board-copy,
+  .board-top-strip > .board-tile:nth-child(11) .board-copy,
+  .board-top-strip > .board-tile:nth-child(12) .board-copy {
+    font-size: 0 !important;
+  }
+
+  .board-top-strip > .board-tile:nth-child(2) .board-copy::after {
+    content: "COS";
+  }
+
+  .board-top-strip > .board-tile:nth-child(3) .board-copy::after {
+    content: "OAT";
+  }
+
+  .board-top-strip > .board-tile:nth-child(4) .board-copy::after {
+    content: "FETE AREA";
+  }
+
+  .board-top-strip > .board-tile:nth-child(6) .board-copy::after {
+    content: "TSLAS";
+  }
+
+  .board-top-strip > .board-tile:nth-child(7) .board-copy::after {
+    content: "VENTURE LAB";
+  }
+
+  .board-top-strip > .board-tile:nth-child(8) .board-copy::after {
+    content: "FLAVORS CAFE";
+  }
+
+  .board-top-strip > .board-tile:nth-child(10) .board-copy::after {
+    content: "HEALTH CENTRE";
+  }
+
+  .board-top-strip > .board-tile:nth-child(11) .board-copy::after {
+    content: "AUDITORIUM";
+  }
+
+  .board-top-strip > .board-tile:nth-child(12) .board-copy::after {
+    content: "AAHAR";
+  }
+
+  .board-top-strip > .board-tile .board-copy::after {
+    display: block !important;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.05;
+    text-align: center;
+    text-transform: uppercase;
+    color: #070707;
+    overflow-wrap: anywhere;
+  }
+
+  /* -------------------------------------------------------
+     DARK BLUE RIGHT RAIL
+     Exact requested names:
+     Nirvana Park
+     Parking
+     Athletics Track
+     ------------------------------------------------------- */
+
+  .right-rail > .board-tile:nth-child(5) .board-copy,
+  .right-rail > .board-tile:nth-child(6) .board-copy,
+  .right-rail > .board-tile:nth-child(7) .board-copy {
+    font-size: 0 !important;
+  }
+
+  .right-rail > .board-tile:nth-child(5) .board-copy::after {
+    content: "NIRVANA PARK";
+  }
+
+  .right-rail > .board-tile:nth-child(6) .board-copy::after {
+    content: "PARKING";
+  }
+
+  .right-rail > .board-tile:nth-child(7) .board-copy::after {
+    content: "ATHLETICS TRACK";
+  }
+
+  .right-rail > .board-tile:nth-child(5) .board-copy::after,
+  .right-rail > .board-tile:nth-child(6) .board-copy::after,
+  .right-rail > .board-tile:nth-child(7) .board-copy::after {
+    display: block !important;
+    width: 100%;
+    padding: 0 2px;
+    font-size: 9px !important;
+    font-weight: 900 !important;
+    line-height: 1.1 !important;
+    text-align: center !important;
+    text-transform: uppercase;
+    color: #070707;
+    white-space: normal;
+  }
+
+}
+
+/* ---------------------------------------------------------
+   80% DESKTOP
+   --------------------------------------------------------- */
+
+@media (min-width: 1181px) and (max-width: 1380px) {
+
+  .form-panel-inner {
+    padding-left: 28px !important;
+    padding-right: 32px !important;
+  }
+
+  .board-top-strip > .board-tile .board-copy::after {
+    font-size: 8px !important;
+    line-height: 1.05 !important;
+  }
+
+  .right-rail > .board-tile:nth-child(5) .board-copy::after,
+  .right-rail > .board-tile:nth-child(6) .board-copy::after,
+  .right-rail > .board-tile:nth-child(7) .board-copy::after {
+    font-size: 8px !important;
+    line-height: 1.05 !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   IMPORTANT:
+   Do not shift the board itself.
+   Only the form content moves left.
+   --------------------------------------------------------- */
+
+
+/* =========================================================
+   FINAL TEXT CLEANUP
+   Remove literal "\A" artifacts and restore right
+   COMMUNITY CHEST label.
+   ========================================================= */
+
+@media (min-width: 1181px) {
+
+  /* Top COMMUNITY CHEST */
+  .board-top-strip > .board-tile:nth-child(5) {
+    justify-content: space-between !important;
+  }
+
+  .board-top-strip > .board-tile:nth-child(5)::before {
+    content: "COMMUNITY CHEST" !important;
+    white-space: normal !important;
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.05;
+    color: #070707;
+    text-transform: uppercase;
+  }
+
+  /* Top GO TO JAIL */
+  .board-top-strip > .board-tile:nth-child(13)::before {
+    content: "GO TO JAIL" !important;
+    white-space: normal !important;
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.05;
+    color: #070707;
+    text-transform: uppercase;
+  }
+
+  /* Right rail COMMUNITY CHEST tile */
+  .right-rail > .board-tile:nth-child(4) {
+    justify-content: space-between !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  .right-rail > .board-tile:nth-child(4) .board-copy {
+    display: block !important;
+    font-size: 9px !important;
+    font-weight: 900 !important;
+    line-height: 1.05 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    color: #070707 !important;
+    white-space: normal !important;
+  }
+
+  .right-rail > .board-tile:nth-child(4) .board-copy span {
+    display: block !important;
+  }
+
+  /* Make sure any pseudo-element from older overrides
+     cannot duplicate the label. */
+  .right-rail > .board-tile:nth-child(4) .board-copy::after {
+    content: none !important;
+  }
+
+  /* Remove any literal slash-A text produced by older
+     pseudo-element rules. */
+  .right-rail > .board-tile:nth-child(5) .board-copy::after {
+    content: "NIRVANA PARK" !important;
+    white-space: normal !important;
+  }
+
+  .right-rail > .board-tile:nth-child(6) .board-copy::after {
+    content: "PARKING" !important;
+    white-space: normal !important;
+  }
+
+  .right-rail > .board-tile:nth-child(7) .board-copy::after {
+    content: "ATHLETICS TRACK" !important;
+    white-space: normal !important;
+  }
+}
+
+@media (min-width: 1181px) and (max-width: 1380px) {
+
+  .board-top-strip > .board-tile:nth-child(5)::before,
+  .board-top-strip > .board-tile:nth-child(13)::before {
+    font-size: 8px !important;
+  }
+
+  .right-rail > .board-tile:nth-child(4) .board-copy {
+    font-size: 8px !important;
+  }
+}
+
+
+/* =========================================================
+   FORM BALANCE FIX
+   More breathing room on the right, less on the left.
+   The board / rails themselves are NOT moved.
+   ========================================================= */
+
+@media (min-width: 1181px) {
+
+  .form-panel-inner {
+    padding-left: 18px !important;
+    padding-right: 68px !important;
+  }
+
+  /* Keep the two columns evenly sized inside the new area */
+  .field-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 28px !important;
+  }
+
+}
+
+@media (min-width: 1181px) and (max-width: 1380px) {
+
+  .form-panel-inner {
+    padding-left: 16px !important;
+    padding-right: 58px !important;
+  }
+
+  .field-grid {
+    column-gap: 24px !important;
+  }
+
+}
+
+
+/* =========================================================
+   FINAL FORM POSITION
+   Shift ONLY the form contents further left.
+   Board frame, step rail, and right rail stay fixed.
+   ========================================================= */
+
+@media (min-width: 1181px) {
+  .form-panel-inner {
+    padding-left: 0 !important;
+    padding-right: 70px !important;
+  }
+
+  .field-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 28px !important;
+  }
+}
+
+@media (min-width: 1181px) and (max-width: 1380px) {
+  .form-panel-inner {
+    padding-left: 0 !important;
+    padding-right: 62px !important;
+  }
+
+  .field-grid {
+    column-gap: 24px !important;
+  }
+}
+
+
+
+/* =========================================================
+   FINAL LAYOUT FIX
+   Restore form position.
+   Move the COMPLETE board/webpage composition left.
+   ========================================================= */
+
+@media (min-width: 1181px) {
+
+  /* Restore the form's internal spacing */
+  .form-panel-inner {
+    padding-left: 32px !important;
+    padding-right: 38px !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .field-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 28px !important;
+  }
+
+  /* Move the whole board composition left.
+     This does NOT alter the form's internal position. */
+  .board-layout {
+    transform: translateX(-55px);
+  }
+}
+
+@media (min-width: 1181px) and (max-width: 1380px) {
+  .form-panel-inner {
+    padding-left: 28px !important;
+    padding-right: 32px !important;
+  }
+
+  .board-layout {
+    transform: translateX(-45px);
+  }
+}
+
+
+/* =========================================================
+   FORM STEP ASSET REPLACEMENT
+   Use the supplied assets from:
+   finance-club/assets_images/
+   ========================================================= */
+
+@media (min-width: 1181px) {
+
+  /* PLAYER */
+  .step-card:nth-child(1) .step-card-icon {
+    content: url("../assets_images/player_default.png") !important;
+  }
+
+  .step-card:nth-child(1):hover .step-card-icon,
+  .step-card:nth-child(1).active .step-card-icon {
+    content: url("../assets_images/player_hover.png") !important;
+  }
+
+  /* IDENTITY */
+  .step-card:nth-child(2) .step-card-icon {
+    content: url("../assets_images/identity_default.png") !important;
+  }
+
+  .step-card:nth-child(2):hover .step-card-icon,
+  .step-card:nth-child(2).active .step-card-icon {
+    content: url("../assets_images/identity_hover.png") !important;
+  }
+
+  /* MARKET */
+  .step-card:nth-child(3) .step-card-icon {
+    content: url("../assets_images/market_default.png") !important;
+  }
+
+  .step-card:nth-child(3):hover .step-card-icon,
+  .step-card:nth-child(3).active .step-card-icon {
+    content: url("../assets_images/market_hover.png") !important;
+  }
+
+  /* DEAL */
+  .step-card:nth-child(4) .step-card-icon {
+    content: url("../assets_images/deal_default.png") !important;
+  }
+
+  .step-card:nth-child(4):hover .step-card-icon,
+  .step-card:nth-child(4).active .step-card-icon {
+    content: url("../assets_images/deal_hover.png") !important;
+  }
+
+  /* Keep the supplied artwork proportional */
+  .step-card-icon {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain !important;
+  }
+
+
+  /* =======================================================
+     RIGHT RAIL COMMUNITY CHEST
+     Force the label to appear above the supplied chest asset.
+     ======================================================= */
+
+  .right-rail > .board-tile:nth-child(4) {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding: 9px 5px 6px !important;
+    gap: 4px !important;
+    overflow: hidden !important;
+  }
+
+  .right-rail > .board-tile:nth-child(4)::before {
+    content: "COMMUNITY CHEST" !important;
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    min-height: 22px !important;
+    color: #070707 !important;
+    font-size: 9px !important;
+    font-weight: 900 !important;
+    line-height: 1.05 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    white-space: normal !important;
+    z-index: 10 !important;
+    order: 1 !important;
+  }
+
+  .right-rail > .board-tile:nth-child(4) .board-special-image {
+    order: 2 !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: 62px !important;
+    max-height: 62px !important;
+    object-fit: contain !important;
+  }
+
+  .right-rail > .board-tile:nth-child(4) .board-copy {
+    order: 3 !important;
+    display: none !important;
+  }
+
+  .right-rail > .board-tile:nth-child(4)::after {
+    display: none !important;
+    content: none !important;
+  }
+}
+
+
+/* =========================================================
+   80% DESKTOP
+   ========================================================= */
+
+@media (min-width: 1181px) and (max-width: 1380px) {
+
+  .step-card-icon {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .right-rail > .board-tile:nth-child(4)::before {
+    font-size: 8px !important;
+    min-height: 20px !important;
+  }
+
+  .right-rail > .board-tile:nth-child(4) .board-special-image {
+    max-width: 54px !important;
+    max-height: 54px !important;
   }
 }
