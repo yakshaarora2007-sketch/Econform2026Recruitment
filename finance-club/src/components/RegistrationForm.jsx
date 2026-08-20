@@ -16,13 +16,6 @@ import freeParkingImage from '../../assets_images/free_parking.png'
 import communityChestImage from '../../assets_images/community_chest.png'
 import chanceImage from '../../assets_images/chance.png'
 import goToJailImage from '../../assets_images/go_to_jail.png'
-import nameUserIcon from '../../assets_images/name_user.png'
-import phoneFormIcon from '../../assets_images/phone.png'
-import applicationIdIcon from '../../assets_images/application_id.png'
-import emailFormIcon from '../../assets_images/email.png'
-import financeGlobeIcon from '../../assets_images/finance_globe.png'
-import contributionHandshakeIcon from '../../assets_images/contribution_handshake.png'
-import expectationsTargetIcon from '../../assets_images/expectations_target.png'
 
 const CATEGORY_COLORS = {
   player: '#ED1C24',
@@ -73,14 +66,55 @@ const RIGHT_TILES = [
 ]
 
 const FIELD_ICONS = {
-  name: nameUserIcon,
-  phone: phoneFormIcon,
-  identity: applicationIdIcon,
-  email: emailFormIcon,
-  market: marketDefaultIcon,
-  finance: financeGlobeIcon,
-  deal: contributionHandshakeIcon,
-  expectations: expectationsTargetIcon
+  phone: (
+    <g>
+      <rect x="10" y="5" width="20" height="35" rx="2" fill="none" stroke="#CC0000" strokeWidth="2" />
+      <line x1="12" y1="8" x2="28" y2="8" stroke="#CC0000" strokeWidth="1" />
+      <line x1="12" y1="37" x2="28" y2="37" stroke="#CC0000" strokeWidth="1" />
+      <circle cx="20" cy="30" r="1" fill="#CC0000" />
+    </g>
+  ),
+  identity: (
+    <g>
+      <rect x="8" y="8" width="24" height="32" rx="1" fill="none" stroke="#F2C623" strokeWidth="1.5" />
+      <circle cx="15" cy="16" r="4" fill="#F2C623" />
+      <path d="M 8 25 L 32 25" stroke="#F2C623" strokeWidth="0.5" />
+      <line x1="15" y1="28" x2="28" y2="28" stroke="#F2C623" strokeWidth="0.5" />
+      <line x1="15" y1="32" x2="28" y2="32" stroke="#F2C623" strokeWidth="0.5" />
+    </g>
+  ),
+  email: (
+    <g>
+      <rect x="8" y="10" width="24" height="18" rx="1" fill="none" stroke="#F2C623" strokeWidth="1.5" />
+      <line x1="8" y1="10" x2="20" y2="19" stroke="#F2C623" strokeWidth="1" />
+      <line x1="32" y1="10" x2="20" y2="19" stroke="#F2C623" strokeWidth="1" />
+    </g>
+  ),
+  market: (
+    <g>
+      <rect x="10" y="28" width="4" height="12" fill="#00A651" stroke="#00A651" strokeWidth="0.5" />
+      <rect x="16" y="20" width="4" height="20" fill="#00A651" stroke="#00A651" strokeWidth="0.5" />
+      <rect x="22" y="12" width="4" height="28" fill="#00A651" stroke="#00A651" strokeWidth="0.5" />
+      <line x1="10" y1="40" x2="26" y2="40" stroke="#00A651" strokeWidth="1" />
+    </g>
+  ),
+  deal: (
+    <g>
+      <path d="M 10 18 Q 10 14 14 14 Q 18 14 20 18" fill="none" stroke="#0052CC" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M 30 18 Q 30 14 26 14 Q 22 14 20 18" fill="none" stroke="#0052CC" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="10" y1="18" x2="8" y2="28" stroke="#0052CC" strokeWidth="1" strokeLinecap="round" />
+      <line x1="30" y1="18" x2="32" y2="28" stroke="#0052CC" strokeWidth="1" strokeLinecap="round" />
+      <path d="M 14 19 L 18 22 L 22 19" fill="none" stroke="#0052CC" strokeWidth="1" strokeLinecap="round" />
+    </g>
+  ),
+  expectations: (
+    <g>
+      <circle cx="20" cy="20" r="10" fill="none" stroke="#00A651" strokeWidth="1.5" />
+      <path d="M 15 15 Q 20 18 25 15" fill="none" stroke="#00A651" strokeWidth="0.5" />
+      <path d="M 15 25 Q 20 22 25 25" fill="none" stroke="#00A651" strokeWidth="0.5" />
+      <line x1="20" y1="10" x2="20" y2="30" stroke="#00A651" strokeWidth="0.5" />
+    </g>
+  )
 }
 
 const TILE_ICONS = {
@@ -145,11 +179,9 @@ const Chevron = ({ color }) => (
 
 function FieldIcon({ name, alt }) {
   return (
-    <img
-      src={FIELD_ICONS[name]}
-      alt={alt}
-      className="field-image-icon"
-    />
+    <svg className="field-image-icon" viewBox="0 0 40 40" role="img" aria-label={alt}>
+      {FIELD_ICONS[name]}
+    </svg>
   )
 }
 
@@ -490,7 +522,15 @@ export default function RegistrationForm() {
             aria-hidden="true"
             className="monopoly-bottom-section"
           />
-        </aside>  
+        </aside>
+
+        <div className="mobile-econ-branding" aria-hidden="true">
+          <img
+            src={econLeftBranding}
+            alt=""
+          />
+        </div>
+
         <section className="game-board" aria-label="ECON registration board">
           <div className="board-top-strip">
             {TOP_TILES.map((tile) => (
@@ -554,7 +594,7 @@ export default function RegistrationForm() {
                     <div className="field-group">
                       <label htmlFor="name" className="field-label red">Name *</label>
                       <div className="field-shell red">
-                        <FieldIcon name="name" alt="Name" />
+                        <span className="person-icon" aria-hidden="true" />
                         <input
                           id="name"
                           ref={nameRef}
@@ -658,7 +698,7 @@ export default function RegistrationForm() {
                     <div className="field-group">
                       <label htmlFor="finance_geopolitics" className="field-label green">Interested in Finance &amp; Geopolitics? *</label>
                       <div className="field-shell green select-shell">
-                        <FieldIcon name="finance" alt="Finance and geopolitics" />
+                        <span className="globe-icon" aria-hidden="true" />
                         <select
                           id="finance_geopolitics"
                           name="finance_geopolitics"
