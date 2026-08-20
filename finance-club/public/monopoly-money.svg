@@ -1,0 +1,31 @@
+<svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- $500 Bill - Orange/Purple -->
+  <rect x="10" y="10" width="40" height="70" fill="#B347B3" stroke="#333" stroke-width="0.5"/>
+  <text x="30" y="35" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFD700">500</text>
+  <text x="30" y="65" font-size="8" text-anchor="middle" fill="#FFF">$</text>
+  
+  <!-- $100 Bill - Purple -->
+  <rect x="60" y="10" width="40" height="70" fill="#9933FF" stroke="#333" stroke-width="0.5"/>
+  <text x="80" y="35" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFD700">100</text>
+  <text x="80" y="65" font-size="8" text-anchor="middle" fill="#FFF">$</text>
+  
+  <!-- $50 Bill - Green -->
+  <rect x="110" y="10" width="40" height="70" fill="#00AA00" stroke="#333" stroke-width="0.5"/>
+  <text x="130" y="35" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFD700">50</text>
+  <text x="130" y="65" font-size="8" text-anchor="middle" fill="#FFF">$</text>
+  
+  <!-- $20 Bill - Light Blue -->
+  <rect x="160" y="10" width="40" height="70" fill="#66CCFF" stroke="#333" stroke-width="0.5"/>
+  <text x="180" y="35" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">20</text>
+  <text x="180" y="65" font-size="8" text-anchor="middle" fill="#000">$</text>
+  
+  <!-- $10 Bill - Light Blue/Cyan -->
+  <rect x="210" y="10" width="40" height="70" fill="#00FFFF" stroke="#333" stroke-width="0.5"/>
+  <text x="230" y="35" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">10</text>
+  <text x="230" y="65" font-size="8" text-anchor="middle" fill="#000">$</text>
+  
+  <!-- $5 Bill - Pink/Red -->
+  <rect x="260" y="10" width="40" height="70" fill="#FF9999" stroke="#333" stroke-width="0.5"/>
+  <text x="280" y="35" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">5</text>
+  <text x="280" y="65" font-size="8" text-anchor="middle" fill="#000">$</text>
+</svg>

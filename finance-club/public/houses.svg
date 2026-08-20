@@ -1,0 +1,29 @@
+<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Red House -->
+  <g transform="translate(10, 20)">
+    <!-- Front face -->
+    <polygon points="15,5 30,0 30,20 15,25" fill="#FF4444" stroke="#333" stroke-width="1"/>
+    <!-- Right face -->
+    <polygon points="30,0 40,5 40,25 30,20" fill="#DD0000" stroke="#333" stroke-width="1"/>
+    <!-- Left face -->
+    <polygon points="15,5 5,10 5,30 15,25" fill="#CC0000" stroke="#333" stroke-width="1"/>
+    <!-- Roof -->
+    <polygon points="5,10 22.5,-5 40,5" fill="#AA0000" stroke="#333" stroke-width="1"/>
+    <!-- Door -->
+    <rect x="15" y="16" width="6" height="9" fill="#8B4513" stroke="#333" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Green House -->
+  <g transform="translate(55, 20)">
+    <!-- Front face -->
+    <polygon points="15,5 30,0 30,20 15,25" fill="#44FF44" stroke="#333" stroke-width="1"/>
+    <!-- Right face -->
+    <polygon points="30,0 40,5 40,25 30,20" fill="#00DD00" stroke="#333" stroke-width="1"/>
+    <!-- Left face -->
+    <polygon points="15,5 5,10 5,30 15,25" fill="#00AA00" stroke="#333" stroke-width="1"/>
+    <!-- Roof -->
+    <polygon points="5,10 22.5,-5 40,5" fill="#006600" stroke="#333" stroke-width="1"/>
+    <!-- Door -->
+    <rect x="15" y="16" width="6" height="9" fill="#8B4513" stroke="#333" stroke-width="0.5"/>
+  </g>
+</svg>

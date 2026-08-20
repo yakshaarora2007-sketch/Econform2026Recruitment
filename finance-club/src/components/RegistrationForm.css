@@ -1,0 +1,1064 @@
+* {
+  box-sizing: border-box;
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 22px 26px;
+  overflow-x: hidden;
+  background: url('../assets/new images/form_background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #0d0d0d;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.board-layout {
+  display: grid;
+  grid-template-columns: 26% 74%;
+  align-items: stretch;
+  max-width: 1380px;
+  min-height: auto;
+  margin: 30px auto;
+  border-radius: 24px;
+  position: relative;
+}
+
+.promo-panel {
+  position: relative;
+  padding: 0;
+  background: transparent;
+  overflow: visible;
+  min-height: 720px;
+  z-index: 3;
+}
+
+.econ-left-branding {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 320px;
+  height: auto;
+  transform: translateX(-50%);
+  display: block;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.monopoly-bottom-section {
+  position: absolute;
+  left: -45px;
+  right: auto;
+  bottom: -6px;
+  width: 410px;
+  max-width: none;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.game-board {
+  align-self: flex-start;
+  overflow: hidden;
+  border: 2.5px solid #111;
+  border-radius: 24px;
+  background: #fbf6ea;
+  box-shadow: 0 18px 42px rgba(42, 32, 15, 0.16);
+  width: 100%;
+}
+
+/* =========================================================
+   TOP PROPERTY STRIP
+   ========================================================= */
+
+.board-top-strip {
+  display: grid;
+  grid-template-columns: 9% repeat(11, 1fr) 9%;
+  min-height: 125px;
+  border-bottom: 2.5px solid #111;
+  background: #fbf6ea;
+}
+
+/* =========================================================
+   BOARD TILES
+   ========================================================= */
+
+.board-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 12px 8px;
+  border-right: 2px solid #111;
+  background: #fbf6ea;
+  text-align: center;
+  overflow: hidden;
+}
+
+.board-tile:last-child {
+  border-right: 0;
+}
+
+.board-tile.vertical {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 6px 6px 18px;
+  border-right: 0;
+  border-bottom: 2px solid #111;
+}
+
+.board-tile.vertical:last-child {
+  border-bottom: 0;
+}
+
+.board-tile.vertical.large {
+  flex: 0 0 90px;
+}
+
+.board-tile.large {
+  justify-content: flex-end;
+  padding-bottom: 12px;
+}
+
+/* =========================================================
+   PROPERTY COLOR STRIP
+   ========================================================= */
+
+.board-accent {
+  position: absolute;
+  inset: auto 0 0;
+  height: 24px;
+  border-top: 2px solid #111;
+}
+
+.board-accent.vertical {
+  inset: 0 auto 0 0;
+  width: 14px;
+  height: auto;
+  border-top: 0;
+  border-right: 2px solid #111;
+}
+
+/* =========================================================
+   PROPERTY TEXT
+   ========================================================= */
+
+.board-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  white-space: normal;
+  color: #070707;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.board-tile.vertical .board-copy {
+  margin-top: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 2px;
+  font-size: 10px;
+  line-height: 1.05;
+}
+
+.board-tile.large .board-copy {
+  font-size: 10px;
+}
+
+.board-tile.large .board-copy span:first-child {
+  font-size: 24px;
+  line-height: 0.9;
+}
+
+/* =========================================================
+   BOARD IMAGES / SPECIAL SQUARES
+   ========================================================= */
+
+.board-illustration {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 60%;
+  max-height: 48px;
+}
+
+.board-tile.vertical .board-illustration {
+  max-width: 48px;
+  max-height: 42px;
+}
+
+.board-special-image {
+  width: auto;
+  height: auto;
+  max-width: 88%;
+  max-height: 78px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.board-tile.vertical .board-special-image {
+  max-width: 72px;
+  max-height: 72px;
+}
+
+/* =========================================================
+   BOARD BODY
+   ========================================================= */
+
+.board-body {
+  display: grid;
+  grid-template-columns: 10.8% 81.1% 8.1%;
+  min-height: 680px;
+}
+
+/* =========================================================
+   STEP RAIL
+   ========================================================= */
+
+.step-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px;
+  border-right: 2.5px solid #111;
+  background: #fbf6ea;
+  height: 100%;
+}
+
+.step-card {
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid #111;
+  border-radius: 8px;
+  background: #fbf6ea;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  padding: 6px 4px;
+  border-color: #111;
+  color: #111;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.step-card:hover,
+.step-card.active {
+  background: var(--step-accent);
+  color: #fff;
+  border-color: var(--step-accent);
+}
+
+.step-card-inner-border {
+  position: absolute;
+  inset: 4px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: border-color 0.2s ease;
+}
+
+.step-card:hover .step-card-inner-border,
+.step-card.active .step-card-inner-border {
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.step-card-number,
+.step-card-label {
+  position: relative;
+  z-index: 1;
+  transition: color 0.2s ease;
+}
+
+.step-card-number {
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--step-accent);
+}
+
+.step-card:hover .step-card-number,
+.step-card.active .step-card-number {
+  color: #fff;
+}
+
+.step-card-icon {
+  position: relative;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.step-card-label {
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+}
+
+.step-card:hover .step-card-label,
+.step-card.active .step-card-label {
+  color: #fff;
+}
+
+/* =========================================================
+   FORM PANEL
+   ========================================================= */
+
+.form-panel {
+  position: relative;
+  background:
+    radial-gradient(circle at 48% 8%, rgba(0, 0, 0, 0.02), transparent 15%),
+    linear-gradient(180deg, #fffcf8, #fbf5eb);
+}
+
+.form-panel-inner {
+  padding: 24px 44px 20px;
+}
+
+.form-kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.kicker-number {
+  color: #d40e13;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.kicker-divider {
+  color: #c6ae8c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.kicker-label {
+  color: #101010;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.form-title {
+  margin: 0;
+  color: #080808;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.title-stripes {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0 12px;
+}
+
+.title-stripe {
+  display: block;
+  height: 3px;
+  border-radius: 999px;
+}
+
+.title-stripe.red {
+  width: 32px;
+  background: #d40e13;
+}
+
+.title-stripe.green {
+  width: 24px;
+  background: #1f7a43;
+}
+
+.form-subtitle {
+  margin: 0 0 16px;
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 28px;
+}
+
+.field-group {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12.5px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.field-label.red {
+  color: #c80e13;
+}
+
+.field-label.amber {
+  color: #d57e00;
+}
+
+.field-label.green {
+  color: #087033;
+}
+
+.field-label.blue {
+  color: #0d48ac;
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.field-shell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1.5px solid;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.field-shell.red {
+  border-color: rgba(200, 14, 19, 0.45);
+}
+
+.field-shell.amber {
+  border-color: rgba(213, 126, 0, 0.45);
+}
+
+.field-shell.green {
+  border-color: rgba(8, 112, 51, 0.45);
+}
+
+.field-shell.blue {
+  border-color: rgba(13, 72, 172, 0.45);
+}
+
+.field-shell:focus-within {
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(10, 10, 10, 0.02);
+}
+
+.field-image-icon,
+.person-icon,
+.globe-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+}
+
+.field-image-icon {
+  object-fit: contain;
+}
+
+/* =========================================================
+   PERSON ICON
+   ========================================================= */
+
+.person-icon {
+  position: relative;
+}
+
+.person-icon::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 1px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #c80e13;
+  border-radius: 50%;
+}
+
+.person-icon::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  bottom: 1px;
+  width: 16px;
+  height: 10px;
+  border: 2px solid #c80e13;
+  border-bottom: 0;
+  border-radius: 11px 11px 0 0;
+}
+
+/* =========================================================
+   GLOBE ICON
+   ========================================================= */
+
+.globe-icon {
+  position: relative;
+  border: 2px solid #087033;
+  border-radius: 50%;
+}
+
+.globe-icon::before {
+  content: '';
+  position: absolute;
+  inset: 3px 8px;
+  border-left: 1.5px solid #087033;
+  border-right: 1.5px solid #087033;
+  border-radius: 50%;
+}
+
+.globe-icon::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 8px;
+  border-top: 1.5px solid #087033;
+}
+
+.textarea-shell .field-image-icon {
+  margin-top: 2px;
+}
+
+/* =========================================================
+   INPUT TEXT
+   ========================================================= */
+
+.field-shell input,
+.field-shell select,
+.field-shell textarea {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #1b1b1b;
+  font: inherit;
+  font-size: 13.5px;
+}
+
+.field-shell input::placeholder,
+.field-shell textarea::placeholder {
+  color: #6b665e;
+}
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.select-shell {
+  position: relative;
+}
+
+.field-shell select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 28px;
+}
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.textarea-shell {
+  align-items: flex-start;
+  min-height: 84px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+
+.field-shell textarea {
+  min-height: 56px;
+  resize: vertical;
+}
+
+/* =========================================================
+   CHEVRON
+   ========================================================= */
+
+.chevron {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 8px;
+}
+
+.next-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 110px;
+  min-height: 38px;
+  border: 0;
+  border-radius: 6px;
+  background: #E01418;
+  box-shadow: 0 4px 12px rgba(224, 20, 24, 0.2);
+  color: #fff;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.next-arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.form-status {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.form-status.success {
+  color: #087033;
+  background: rgba(8, 112, 51, 0.08);
+  border: 1px solid rgba(8, 112, 51, 0.3);
+}
+
+.form-status.error {
+  color: #c80e13;
+  background: rgba(200, 14, 19, 0.08);
+  border: 1px solid rgba(200, 14, 19, 0.3);
+}
+
+.next-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   RIGHT RAIL
+   ========================================================= */
+
+.right-rail {
+  display: flex;
+  flex-direction: column;
+  border-left: 2.5px solid #111;
+  background: #fbf6ea;
+  height: 100%;
+}
+
+.right-rail .board-tile {
+  min-height: 0;
+}
+
+.right-rail .board-tile.vertical .board-copy {
+  font-size: 10px;
+  line-height: 1.05;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1380px) {
+  .page-shell {
+    padding: 12px 24px;
+  }
+
+  .board-layout {
+    grid-template-columns: 320px minmax(0, 1fr);
+    width: calc(100vw - 24px);
+    max-width: 1160px;
+    margin: 12px auto;
+  }
+
+  .promo-panel {
+    min-height: 640px;
+  }
+
+  .econ-left-branding {
+    width: 255px;
+    max-width: 255px;
+  }
+
+  .monopoly-bottom-section {
+    left: -20px;
+    bottom: -5px;
+    width: 405px;
+  }
+
+  /* Keep property cards larger at this breakpoint */
+  .board-top-strip {
+    min-height: 105px;
+    grid-template-columns: 9% repeat(11, 1fr) 9%;
+  }
+
+  .board-special-image {
+    max-width: 84%;
+    max-height: 68px;
+  }
+
+  .board-tile {
+    padding: 10px 6px;
+  }
+
+  .board-copy {
+    font-size: 11px;
+  }
+
+  .board-tile.vertical .board-copy {
+    font-size: 9px;
+  }
+
+  .board-body {
+    min-height: 568px;
+  }
+
+  .board-tile.vertical.large {
+    flex: 0 0 74px;
+  }
+
+  .go-word {
+    font-size: 24px;
+  }
+
+  .form-panel-inner {
+    padding: 16px 28px 16px;
+  }
+
+  .form-title {
+    font-size: 26px;
+  }
+
+  .field-grid {
+    gap: 12px 20px;
+  }
+
+  .field-shell {
+    min-height: 40px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1180px) {
+  .page-shell {
+    padding: 12px;
+  }
+
+  .board-layout {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px;
+  }
+
+  .promo-panel {
+    display: none;
+  }
+
+  .board-top-strip,
+  .right-rail {
+    display: none;
+  }
+
+  .board-body {
+    grid-template-columns: 110px minmax(0, 1fr);
+    min-height: auto;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .page-shell {
+    padding: 0;
+  }
+
+  .game-board {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+  }
+
+  .board-body {
+    grid-template-columns: 1fr;
+  }
+
+  .step-rail {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-right: 0;
+    border-bottom: 2px solid #111;
+  }
+
+  .step-card {
+    min-height: 100px;
+  }
+
+  .step-card {
+    padding: 6px;
+  }
+
+  .form-panel-inner {
+    padding: 20px 16px;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .form-title {
+    font-size: 24px;
+  }
+
+  .next-button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   LEFT PANEL / 100% VIEWPORT FIX
+   ========================================================= */
+
+.board-layout {
+  grid-template-columns: 360px minmax(0, 1fr);
+  width: min(1530px, calc(100vw - 32px));
+  max-width: 1530px;
+  margin: 18px auto;
+}
+
+.promo-panel {
+  position: relative;
+  min-height: 720px;
+  height: 100%;
+  overflow: visible;
+  z-index: 5;
+}
+
+.econ-left-branding {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  width: 285px;
+  max-width: 285px;
+  height: auto;
+  transform: translateX(-50%);
+  display: block;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.monopoly-bottom-section {
+  position: absolute;
+  left: -22px;
+  right: auto;
+  bottom: -6px;
+  width: 445px;
+  max-width: none;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Keep the actual board in front of the artwork */
+.game-board {
+  position: relative;
+  z-index: 4;
+}
+
+/* =========================================================
+   RESPONSIVE LEFT PANEL
+   ========================================================= */
+
+@media (max-width: 1380px) {
+  .board-layout {
+    grid-template-columns: 320px minmax(0, 1fr);
+    width: calc(100vw - 24px);
+    max-width: 1160px;
+    margin: 12px auto;
+  }
+
+  .promo-panel {
+    min-height: 640px;
+  }
+
+  .econ-left-branding {
+    width: 255px;
+    max-width: 255px;
+  }
+
+  .monopoly-bottom-section {
+    left: -20px;
+    bottom: -5px;
+    width: 405px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .board-layout {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px;
+  }
+
+  .promo-panel {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .board-layout {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* =========================================================
+   AREA 2: BOARD FRAME CONTENT
+   Exact 12 named properties + 4 supplied special squares.
+   ========================================================= */
+
+.board-copy {
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  white-space: normal;
+}
+
+.board-tile.vertical .board-copy {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 2px;
+}
+
+.board-special-image {
+  width: auto;
+  height: auto;
+  max-width: 88%;
+  max-height: 78px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.board-tile.vertical .board-special-image {
+  max-width: 72px;
+  max-height: 72px;
+}
+
+/* The three blue properties occupy the right rail. */
+.right-rail .board-tile {
+  min-height: 0;
+}
+
+.right-rail .board-tile.vertical .board-copy {
+  font-size: 10px;
+  line-height: 1.05;
+}
+
+/* =========================================================
+   FINAL PROPERTY CARD SIZE OVERRIDE
+   This stays at the bottom so it wins over earlier rules.
+   ========================================================= */
+
+.board-top-strip {
+  min-height: 125px;
+  grid-template-columns: 9% repeat(11, 1fr) 9%;
+}
+
+.board-tile {
+  padding: 12px 8px;
+}
+
+.board-copy {
+  font-size: 12px;
+  line-height: 1.1;
+}
+
+.board-accent {
+  height: 24px;
+}
+
+.board-special-image {
+  max-width: 88%;
+  max-height: 78px;
+}
+
+@media (max-width: 1380px) {
+  .board-top-strip {
+    min-height: 105px;
+    grid-template-columns: 9% repeat(11, 1fr) 9%;
+  }
+
+  .board-special-image {
+    max-width: 84%;
+    max-height: 68px;
+  }
+
+  .board-copy {
+    font-size: 11px;
+  }
+}

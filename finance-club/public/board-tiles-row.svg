@@ -1,0 +1,36 @@
+<svg viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- BOARD TILES ROW -->
+  
+  <!-- FREE PARKING -->
+  <g transform="translate(10, 10)">
+    <rect width="80" height="80" fill="#F0E68C" stroke="#333" stroke-width="2" rx="2"/>
+    <circle cx="40" cy="20" r="10" fill="#DD0000"/>
+    <circle cx="40" cy="20" r="6" fill="none" stroke="#FFF" stroke-width="1"/>
+    <text x="40" y="50" font-size="9" font-weight="bold" text-anchor="middle" fill="#333">PARKING</text>
+  </g>
+  
+  <!-- CHANCE (Question Mark) -->
+  <g transform="translate(105, 10)">
+    <rect width="80" height="80" fill="#FFF" stroke="#333" stroke-width="2" rx="2"/>
+    <text x="40" y="35" font-size="28" font-weight="bold" text-anchor="middle" fill="#CC0000">?</text>
+    <text x="40" y="60" font-size="9" font-weight="bold" text-anchor="middle" fill="#333">CHANCE</text>
+  </g>
+  
+  <!-- COMMUNITY CHEST -->
+  <g transform="translate(200, 10)">
+    <rect width="80" height="80" fill="#4169E1" stroke="#333" stroke-width="2" rx="2"/>
+    <rect x="15" y="15" width="50" height="30" fill="#8B7355" stroke="#333" stroke-width="1" rx="1"/>
+    <text x="40" y="35" font-size="10" font-weight="bold" text-anchor="middle" fill="#FFD700">CC</text>
+    <text x="40" y="60" font-size="8" font-weight="bold" text-anchor="middle" fill="#FFF">COMMUNITY</text>
+    <text x="40" y="72" font-size="8" font-weight="bold" text-anchor="middle" fill="#FFF">CHEST</text>
+  </g>
+  
+  <!-- GO TO JAIL -->
+  <g transform="translate(295, 10)">
+    <rect width="80" height="80" fill="#F0E68C" stroke="#333" stroke-width="2" rx="2"/>
+    <circle cx="40" cy="18" r="8" fill="#003366" stroke="#333" stroke-width="1" rx="1"/>
+    <text x="40" y="22" font-size="7" fill="#FFF" text-anchor="middle" font-weight="bold">JAIL</text>
+    <text x="40" y="50" font-size="9" font-weight="bold" text-anchor="middle" fill="#333">GO TO</text>
+    <text x="40" y="65" font-size="9" font-weight="bold" text-anchor="middle" fill="#333">JAIL</text>
+  </g>
+</svg>
